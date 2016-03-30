@@ -1,0 +1,29 @@
+:head
+@cls
+@echo ---------------------------------------
+@echo ----------EXCLUSAO AUTOMATICA----------
+@echo ----------------POR DATA---------------
+@echo ---------------------------------------
+@echo ATENÇÃO:
+@echo Editar o código com o endereço da pasta em que estão os arquivos a serem excluidos na seção startcode desse codigo.
+@echo Colocar também a "idade" dos arquivos.
+@echo Ex. arquivos com mais de 3 dias de idade, colocar numero 3 como critério.
+@echo ---------------------------------------------------------------------------------------------
+@echo ---forfiles -p "C:Endereço_da_pasta" -d -"idade_dos_arquivos" -c "cmd  /c del /f /q @path"---
+@echo ---------------------------------------------------------------------------------------------
+@echo
+@echo -----Deseja iniciar a exclusão?-----
+@echo 
+@echo -- (S) Sim
+@echo -- (N) Nao
+@echo 
+@set p/ opcao = "Escolha uma opcao: " @echo.
+@echo
+@echo
+@if %opcao% == n exitd
+@if %opcao% == s goto startcode
+@goto menu
+
+:startcode
+@forfiles -p "C:Endereço_da_pasta" -d -"idade_dos_arquivos" -c "cmd  /c del /f /q @path"
+
