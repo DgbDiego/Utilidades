@@ -26,4 +26,8 @@
 
 :startcode
 @forfiles -p "C:Endereço_da_pasta" -d -"idade_dos_arquivos" -c "cmd  /c del /f /q @path"
+@echo
+@echo --FINALIZADO--
+@pause
+@goto menu
 
