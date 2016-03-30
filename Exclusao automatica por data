@@ -14,7 +14,6 @@
 @echo --de idade, colocar numero 3 como criterio.
 @echo.
 @echo.
-@echo ---forfiles -p "C:Endereco_da_pasta" -d -"idade_dos_arquivos" -c "cmd  /c del /f /q @path"---
 @echo.
 @echo.
 @echo -----Deseja iniciar a exclusao?-----
