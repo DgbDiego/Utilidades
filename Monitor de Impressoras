@@ -1,3 +1,10 @@
+--
+--Linguagem: SQL
+--Codigo feito para utilizacao no SpiceWorks.
+--Monitora os dados das impressoras na rede.
+--Possibilidade de usar como Widget na Dashboard.
+--
+--
 SELECT
 --Local e Nome da Impressora
 d.location||","||d.name as "Impressora",
