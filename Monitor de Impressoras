@@ -1,0 +1,26 @@
+SELECT
+--Local e Nome da Impressora
+d.location||","||d.name as "Impressora",
+
+--Endereco IP da impressora
+d.server_name as "IP",
+
+--Contador total de paginas
+d.page_count as "Total de Paginas",
+
+--Localizacao da impressora
+d.location as "Setor",
+
+--Ultima medicao
+d.last_scan_time as "Ultima Medicao",
+
+--Nivel de tinta restante no toner medido
+printer_supplies.level as "Nivel Restante"
+
+FROM printer_supplies
+Left Join devices d on d.id = printer_supplies.network_printer_id
+
+WHERE
+--Linha a seguir possibilita controlar o range do nivel reportado para toner
+--primenro valor e limite minimo, segundo valor limite maximo
+printer_supplies.level >1 AND printer_supplies.level <100;
